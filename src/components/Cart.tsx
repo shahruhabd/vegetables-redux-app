@@ -1,12 +1,17 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux';
 import { removeFromCart, incrementQuantity, decrementQuantity } from '../actions';
+import { RootState } from '../store';
+import { CartItem } from 'src/reducers/cartReducer';
+
+const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
 
 const Cart = () => {
-  const cartItems = useSelector(state => state.cart);
+  const cartItems = useAppSelector(state => state.cart);
   const dispatch = useDispatch();
 
-  const totalPrice = Object.values(cartItems).reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalPrice = Object.values(cartItems).reduce((total: number, item: CartItem) => total + item.price * item.quantity, 0);
 
   return (
     <div className="container mt-3">
