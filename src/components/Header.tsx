@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-dark text-white py-4 mb-4">
+    <header style={{ backgroundColor: '#333', padding: '16px 0', marginBottom: '40px' }}>
       <div className="container text-center">
-        <h1>Vegetable Store</h1>
+        <Link to="/" style={{ textDecoration: 'none', color: 'white', fontSize: '24px', fontWeight: 'bold' }}>
+          Vegetable Store
+        </Link>
       </div>
     </header>
   );

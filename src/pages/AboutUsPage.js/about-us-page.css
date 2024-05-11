@@ -1,0 +1,26 @@
+.about-us-page .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    color: #4CAF50; /* A fresh, vegetable-themed green color */
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding-bottom: 10px;
+  }
+  
+  footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    color: grey;
+  }
+  
