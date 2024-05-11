@@ -6,7 +6,6 @@ interface Product {
 }
 
 
-
 export const addToCart = (item: Product) => ({
   type: 'ADD_TO_CART',
   payload: item
