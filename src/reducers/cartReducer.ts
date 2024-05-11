@@ -1,10 +1,8 @@
-// Типы действий
 const ADD_TO_CART = 'ADD_TO_CART';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 const INCREMENT_QUANTITY = 'INCREMENT_QUANTITY';
 const DECREMENT_QUANTITY = 'DECREMENT_QUANTITY';
 
-// Интерфейсы для элементов корзины и состояния
 export interface CartItem {
   id: string;
   name: string;
@@ -12,7 +10,6 @@ export interface CartItem {
   quantity: number;
 }
 
-// Тип действия
 interface AddToCartAction {
   type: typeof ADD_TO_CART;
   payload: CartItem;
@@ -20,35 +17,31 @@ interface AddToCartAction {
 
 interface RemoveFromCartAction {
   type: typeof REMOVE_FROM_CART;
-  payload: string; // предполагаем, что payload - это id
+  payload: string; 
 }
 
 interface IncrementQuantityAction {
   type: typeof INCREMENT_QUANTITY;
-  payload: string; // id элемента корзины
+  payload: string;
 }
 
 interface DecrementQuantityAction {
   type: typeof DECREMENT_QUANTITY;
-  payload: string; // id элемента корзины
+  payload: string; 
 }
 
-// Объединение типов действий
 type CartActions =
   | AddToCartAction
   | RemoveFromCartAction
   | IncrementQuantityAction
   | DecrementQuantityAction;
 
-// Состояние корзины
 interface CartState {
   [key: string]: CartItem;
 }
 
-// Начальное состояние
 const initialState: CartState = {};
 
-// Редьюсер
 const cartReducer = (
   state: CartState = initialState,
   action: CartActions
